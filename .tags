@@ -11,3 +11,8 @@ main	.\main.py	/^def main(qux, foo=1, bar=2):$/;"	f
 pprint	.\main.py	/^import pprint$/;"	i
 pyag	.\main.py	/^import pyautogui as pyag$/;"	i
 re	.\main.py	/^import re$/;"	i
+time	.\main.py	/^import time$/;"	i
+x	.\main.py	/^x = 765$/;"	v
+x_offset	.\main.py	/^x_offset = 25$/;"	v
+y	.\main.py	/^y = 307$/;"	v
+y_offset	.\main.py	/^y_offset = 25$/;"	v

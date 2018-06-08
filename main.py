@@ -2,29 +2,41 @@ import re
 import argparse
 import pprint
 import pyautogui as pyag
+import time
 
+x = 765
+y = 307
+y_offset = 25
+x_offset = 25
 # Code works on Google Chrome, on 1920 x 1080 screen.
 def enterTimes():
-    pyag.typewrite(['9:00\n', '11:40\n', '12:40\n', '18:00\n'])
+    time.sleep(1)
+    pyag.typewrite('9:00\n')
+    pyag.typewrite('11:40\n')
+    pyag.typewrite('12:40\n')
+    pyag.typewrite('18:00\n')
+    # move away
+    pyag.click(738, 230)
+    time.sleep(0.5)
     return
 
 def main(qux, foo=1, bar=2):
     print("Foo: {}\nBar: {}\nQux: {}".format(foo, bar, qux))
     pp = pprint.PrettyPrinter(indent=4)
     # Monday
-    pyag.click(760,307)
+    pyag.click(x,307)
     enterTimes()
     # Tuesday
-    pyag.click(760,343)
+    pyag.click(x-x_offset,343)
     enterTimes()
 
-    pyag.click(760,368)
+    pyag.click(x-x_offset,368)
     enterTimes()
 
-    pyag.click(760,397)
+    pyag.click(x-x_offset,397)
     enterTimes()
 
-    pyag.click(760,426)
+    pyag.click(x-x_offset,426)
     enterTimes()
 
     return
