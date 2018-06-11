@@ -6,7 +6,7 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 _cli	.\main.py	/^def _cli():$/;"	f
 argparse	.\main.py	/^import argparse$/;"	i
-enterTimes	.\main.py	/^def enterTimes():$/;"	f
+enterTimes	.\main.py	/^def enterTimes(foo, bar, qux, vas):$/;"	f
 main	.\main.py	/^def main(qux, foo=1, bar=2):$/;"	f
 pprint	.\main.py	/^import pprint$/;"	i
 pyag	.\main.py	/^import pyautogui as pyag$/;"	i

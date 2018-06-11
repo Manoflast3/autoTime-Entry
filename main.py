@@ -9,35 +9,35 @@ y = 307
 y_offset = 25
 x_offset = 25
 # Code works on Google Chrome, on 1920 x 1080 screen.
-def enterTimes():
+def enterTimes(foo, bar, qux, vas):
     time.sleep(1)
-    pyag.typewrite('9:00\n')
-    pyag.typewrite('11:40\n')
-    pyag.typewrite('12:40\n')
-    pyag.typewrite('18:00\n')
+    pyag.typewrite(foo + '\n')
+    pyag.typewrite(bar + '\n')
+    pyag.typewrite(qux + '\n')
+    pyag.typewrite(vas + '\n')
     # move away
     pyag.click(738, 230)
     time.sleep(0.5)
     return
 
 def main(qux, foo=1, bar=2):
-    print("Foo: {}\nBar: {}\nQux: {}".format(foo, bar, qux))
+    print("Foo: {}\nBar: {}\nQux: {}\nVas: {}".format(foo, bar, qux, vas))
     pp = pprint.PrettyPrinter(indent=4)
     # Monday
     pyag.click(x,307)
-    enterTimes()
+    enterTimes(foo, bar, qux, vas)
     # Tuesday
     pyag.click(x-x_offset,343)
-    enterTimes()
+    enterTimes(foo, bar, qux, vas)
 
     pyag.click(x-x_offset,368)
-    enterTimes()
+    enterTimes(foo, bar, qux, vas)
 
     pyag.click(x-x_offset,397)
-    enterTimes()
+    enterTimes(foo, bar, qux, vas)
 
     pyag.click(x-x_offset,426)
-    enterTimes()
+    enterTimes(foo, bar, qux, vas)
 
     return
 
@@ -46,11 +46,13 @@ def _cli():
             description=__doc__,
             formatter_class=argparse.ArgumentDefaultsHelpFormatter,
             argument_default=argparse.SUPPRESS)
-    parser.add_argument('-f', '--foo', help="This is the input shape file argument")
-    parser.add_argument('-b', '--bar', help="This is the output shape file argument")
+    parser.add_argument('-f', '--foo', default ="9:00", help="This is the input shape file argument")
+    parser.add_argument('-b', '--bar', default ="11:40", help="This is the output shape file argument")
     qux_help = ("This argument will show its default in the help due to "
                 "ArgumentDefaultsHelpFormatter")
-    parser.add_argument('-q', '--qux', default=3, help=qux_help)
+    parser.add_argument('-q', '--qux', default = "12:40", help=qux_help)
+    parser.add_argument('-v', '--vas', default = "18:00", help="vas help")
+
     args = parser.parse_args()
     return vars(args)
 
