@@ -7,7 +7,7 @@
 _cli	.\main.py	/^def _cli():$/;"	f
 argparse	.\main.py	/^import argparse$/;"	i
 enterTimes	.\main.py	/^def enterTimes(foo, bar, qux, vas):$/;"	f
-main	.\main.py	/^def main(qux, foo=1, bar=2):$/;"	f
+main	.\main.py	/^def main(qux, foo=1, bar=2, vas=3):$/;"	f
 pprint	.\main.py	/^import pprint$/;"	i
 pyag	.\main.py	/^import pyautogui as pyag$/;"	i
 re	.\main.py	/^import re$/;"	i

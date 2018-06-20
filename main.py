@@ -20,7 +20,7 @@ def enterTimes(foo, bar, qux, vas):
     time.sleep(0.5)
     return
 
-def main(qux, foo=1, bar=2):
+def main(qux, foo=1, bar=2, vas=3):
     print("Foo: {}\nBar: {}\nQux: {}\nVas: {}".format(foo, bar, qux, vas))
     pp = pprint.PrettyPrinter(indent=4)
     # Monday
@@ -46,12 +46,10 @@ def _cli():
             description=__doc__,
             formatter_class=argparse.ArgumentDefaultsHelpFormatter,
             argument_default=argparse.SUPPRESS)
-    parser.add_argument('-f', '--foo', default ="9:00", help="This is the input shape file argument")
-    parser.add_argument('-b', '--bar', default ="11:40", help="This is the output shape file argument")
-    qux_help = ("This argument will show its default in the help due to "
-                "ArgumentDefaultsHelpFormatter")
-    parser.add_argument('-q', '--qux', default = "12:40", help=qux_help)
-    parser.add_argument('-v', '--vas', default = "18:00", help="vas help")
+    parser.add_argument('-f', '--foo', default ="9:00", help="This is the first time to input")
+    parser.add_argument('-b', '--bar', default ="11:40", help="This is the second time to input")
+    parser.add_argument('-q', '--qux', default = "12:40", help="This is the third time to input")
+    parser.add_argument('-v', '--vas', default = "18:00", help="This is the fourth time to input")
 
     args = parser.parse_args()
     return vars(args)
