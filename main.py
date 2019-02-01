@@ -4,10 +4,11 @@ import pprint
 import pyautogui as pyag
 import time
 
-x = 765
+x = 775
 y = 307
-y_offset = 25
-x_offset = 25
+y_offset = 28
+x_offset = 40
+y_start = 248
 # Code works on Google Chrome, on 1920 x 1080 screen.
 def enterTimes(foo, bar, qux, vas):
     time.sleep(1)
@@ -22,22 +23,34 @@ def enterTimes(foo, bar, qux, vas):
 
 def main(qux, foo=1, bar=2, vas=3):
     print("Foo: {}\nBar: {}\nQux: {}\nVas: {}".format(foo, bar, qux, vas))
+
     pp = pprint.PrettyPrinter(indent=4)
+    y = y_start
+
+    # fullscreen it
+    pyag.click(800, 307)
+    pyag.press('f11')
     # Monday
-    pyag.click(x,307)
+    pyag.click(x,y)
     enterTimes(foo, bar, qux, vas)
+    y = y + y_offset 
     # Tuesday
-    pyag.click(x-x_offset,343)
+    pyag.click(x-x_offset,y)
     enterTimes(foo, bar, qux, vas)
+    y = y + y_offset 
 
-    pyag.click(x-x_offset,368)
+    pyag.click(x-x_offset,y)
     enterTimes(foo, bar, qux, vas)
+    y = y + y_offset 
 
-    pyag.click(x-x_offset,397)
+    pyag.click(x-x_offset,y)
     enterTimes(foo, bar, qux, vas)
+    y = y + y_offset 
 
-    pyag.click(x-x_offset,426)
+    pyag.click(x-x_offset,y)
     enterTimes(foo, bar, qux, vas)
+    # exit fullscreen
+    pyag.press('f11')
 
     return
 
